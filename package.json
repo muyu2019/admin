@@ -15,9 +15,16 @@
     "antd": "^3.23.6",
     "babel-plugin-import": "^1.12.2",
     "next": "9.0.6",
+    "next-redux-wrapper": "^4.0.1",
     "null-loader": "^3.0.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "typescript": "^3.6.3"
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-observable": "^1.2.0",
+    "rxjs": "^6.5.3",
+    "typescript": "^3.6.3",
+    "universal-rxjs-ajax": "^2.0.3"
   }
 }
