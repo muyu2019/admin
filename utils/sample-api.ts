@@ -6,7 +6,7 @@ export const dataArray: User[] = [
   {id: 102, name: 'Bob'},
   {id: 103, name: 'Caroline'},
   {id: 104, name: 'Dave'},
-]
+];
 
 /**
  * Calls a mock API which finds a user by ID from the list above.

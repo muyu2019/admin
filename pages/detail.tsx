@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { NextPageContext } from 'next'
+import {NextPageContext} from 'next'
 import Layout from '../components/Layout'
-import { User } from '../interfaces'
-import { findData } from '../utils/sample-api'
+import {User} from '../interfaces'
+import {findData} from '../utils/sample-api'
 import ListDetail from '../components/ListDetail'
 
 type Props = {
@@ -11,24 +11,24 @@ type Props = {
 }
 
 class InitialPropsDetail extends React.Component<Props> {
-  static getInitialProps = async ({ query }: NextPageContext) => {
+  static getInitialProps = async ({query}: NextPageContext) => {
     try {
-      const { id } = query
+      const {id} = query
       const item = await findData(Array.isArray(id) ? id[0] : id)
-      return { item }
+      return {item}
     } catch (err) {
-      return { errors: err.message }
+      return {errors: err.message}
     }
   }
 
   render() {
-    const { item, errors } = this.props
+    const {item, errors} = this.props
 
     if (errors) {
       return (
         <Layout title={`Error | Next.js + TypeScript Example`}>
           <p>
-            <span style={{ color: 'red' }}>Error:</span> {errors}
+            <span style={{color: 'red'}}>Error:</span> {errors}
           </p>
         </Layout>
       )
@@ -38,7 +38,7 @@ class InitialPropsDetail extends React.Component<Props> {
       <Layout
         title={`${item ? item.name : 'Detail'} | Next.js + TypeScript Example`}
       >
-        {item && <ListDetail item={item} />}
+        {item && <ListDetail item={item}/>}
       </Layout>
     )
   }

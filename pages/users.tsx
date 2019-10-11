@@ -1,9 +1,10 @@
 import * as React from 'react'
 import {NextPage} from 'next';
+import {Button} from 'antd';
 
 const Page: NextPage = () => (
   <div>
-    index
+    <Button>click</Button>
   </div>
 );
 

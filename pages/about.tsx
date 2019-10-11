@@ -12,6 +12,6 @@ const AboutPage: React.FunctionComponent = () => (
       </Link>
     </p>
   </Layout>
-)
+);
 
 export default AboutPage
