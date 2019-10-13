@@ -6,9 +6,8 @@ const SubMenu = Menu.SubMenu;
 class PageHeader extends React.PureComponent {
   render() {
     return (
-      <div>
-        <Menu theme="dark"
-              mode="horizontal">
+      <div style={{display: "flex", height: "64px", alignItems: "center", justifyContent: "flex-end"}}>
+        <Menu theme="dark" mode="horizontal">
           <SubMenu key="sub1" title={<span><Icon type="user"/><span>你好</span></span>}>
             <Menu.Item key="profile">账户信息</Menu.Item>
             <Menu.Item key="logout">退出</Menu.Item>

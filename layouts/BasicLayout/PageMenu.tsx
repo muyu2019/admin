@@ -11,13 +11,12 @@ class PageMenu extends React.PureComponent {
   };
 
   onCollapse = (collapsed: boolean) => {
-    console.log(collapsed);
     this.setState({collapsed});
   };
 
   render() {
     return (
-      <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} style={{minHeight: "100vh"}}>
+      <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
         <div style={{height: "32px", margin: "16px", background: "#fff"}}/>
         <Menu theme="dark" defaultSelectedKeys={['users']} mode="inline">
           <SubMenu

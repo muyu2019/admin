@@ -43,9 +43,16 @@ export const DELETE_ERROR = `DELETE_${KEY}_ERROR`;
 
 
 /* STATE */
+interface Filters {
+  current: number,
+  pageSize: number,
+}
 
 export interface ListState {
-  loading: boolean
+  loading: boolean,
+  total: number,
+  filters: Filters,
+  items: any,
 }
 
 export interface CreateState {

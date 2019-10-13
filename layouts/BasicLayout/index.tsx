@@ -6,10 +6,10 @@ import PageHeader from './PageHeader';
 const {Header, Content, Footer} = Layout;
 
 const BasicLayout: React.FunctionComponent = ({children}) => (
-  <Layout style={{minHeight: "100vh"}}>
+  <Layout>
     <PageMenu/>
     <Layout>
-      <Header style={{padding: 0}}>
+      <Header>
         <PageHeader/>
       </Header>
       <Content style={{margin: '16px'}}>

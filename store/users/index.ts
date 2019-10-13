@@ -5,6 +5,12 @@ export const ReducerKey = `users`;
 
 const initialListState: types.ListState = {
   loading: false,
+  total: 0,
+  filters: {
+    pageSize: 10,
+    current: 1,
+  },
+  items: [],
 };
 
 function list(state = initialListState, action: types.ListAction): types.ListState {
