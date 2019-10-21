@@ -7,7 +7,7 @@ import {composeWithDevTools} from "redux-devtools-extension";
 export default function (initialState: AppState) {
   const epicMiddleware = createEpicMiddleware();
   const reduxMiddleware = applyMiddleware(epicMiddleware);
-  
+
   const store = createStore(rootReducer, initialState, composeWithDevTools(reduxMiddleware));
 
   epicMiddleware.run(rootEpic as any);
