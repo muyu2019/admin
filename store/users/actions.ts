@@ -1,8 +1,10 @@
 import * as types from './types';
+import {Filters} from "./types";
 
-export function listRequest(): types.ListRequestAction {
+export function listRequest(data: Filters, onSuccess: () => void): types.ListRequestAction {
   return {
     type: types.LIST_REQUEST,
+    payload: data,
   };
 }
 

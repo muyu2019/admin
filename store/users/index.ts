@@ -1,5 +1,5 @@
 import * as types from './types';
-import {combineReducers} from "redux";
+import {combineReducers} from 'redux-immutable';
 
 export const ReducerKey = `users`;
 
@@ -7,6 +7,7 @@ const initialListState: types.ListState = {
   loading: false,
   total: 0,
   filters: {
+    id: 0,
     pageSize: 10,
     current: 1,
   },
@@ -27,9 +28,7 @@ const userReducer = combineReducers({
   list,
 });
 
-export type UserState = {
-  list: types.ListState,
-};
+export type UserState = ReturnType<typeof userReducer>
 
 export default userReducer;
 

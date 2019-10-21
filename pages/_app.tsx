@@ -3,6 +3,7 @@ import {Provider} from 'react-redux'
 import App from 'next/app'
 import withRedux from 'next-redux-wrapper'
 import makeStore from '../store'
+import {fromJS} from 'immutable'
 
 type Props = {
   Component: React.Component
@@ -28,4 +29,7 @@ class MyApp extends App<Props> {
   }
 }
 
-export default withRedux(makeStore)(MyApp)
+export default withRedux(makeStore, {
+  serializeState: state => state.toJS(),
+  deserializeState: state => fromJS(state)
+})(MyApp)

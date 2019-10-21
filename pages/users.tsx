@@ -1,10 +1,27 @@
 import * as React from 'react'
 import {Table} from 'antd';
 import BasicLayout from "../layouts/BasicLayout";
+import {connect} from "react-redux";
+import {AppState} from '../store/rootReducer';
+import {listRequest} from '../store/users/actions';
 
 const {Column} = Table;
 
-class Page extends React.PureComponent {
+const mapStateToProps = (state: AppState) => ({
+  // users: state.users,
+});
+
+interface PageProps {
+  listRequest: typeof listRequest;
+}
+
+class Page extends React.PureComponent<PageProps> {
+
+  componentDidMount(): void {
+    // const {listRequest} = this.props;
+    // listRequest();
+  }
+
   render() {
     return (
       <BasicLayout>
@@ -37,4 +54,4 @@ class Page extends React.PureComponent {
   }
 }
 
-export default Page
+export default connect(mapStateToProps, {listRequest})(Page)
